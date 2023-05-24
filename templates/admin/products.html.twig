@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin_base.html.twig' %}
 
-{% block title %}Hello AdminProductController!{% endblock %}
+{% block title %}Product Admin{% endblock %}
 
 {% block body %}
 <a class="btn btn-success" href="{{path("app_admin_product_add")}}">Ajouter un produit</a>
@@ -26,7 +26,7 @@
                 <td>{{product.slug}}</td>
                 <td>{{product.createdAt | date('d/m/Y')}}</td>
                 <td>{{product.price}} €</td>
-                <td><button class="btn btn-info">Modifier</button></td>
+                <td><a href="{{path('app_admin_product_edit', {id:product.id})}}" class="btn btn-info">Modifier</a></td>
                 <td><button class="btn btn-danger">Supprimer</button></td>
             </tr>
         {% endfor %}

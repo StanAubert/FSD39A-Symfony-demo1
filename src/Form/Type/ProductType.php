@@ -25,7 +25,7 @@ class ProductType extends AbstractType
                 'class' => Category::class,
                 'choice_label' => 'name'
             ])
-            ->add('Save', SubmitType::class, ['label' => 'Ajouter un produit'])
+            ->add('Save', SubmitType::class, ['label' => 'Valider'])
         ;
     }
 

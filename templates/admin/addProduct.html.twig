@@ -1,0 +1,7 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}{% if edit %} Modifier {{product.name}} {% else %} Ajouter un produit {% endif %} {% endblock %}
+
+{% block body %}
+    {{form(form)}}
+{% endblock %}
