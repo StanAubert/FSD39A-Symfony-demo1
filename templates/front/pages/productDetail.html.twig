@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Symfony{% endblock %}
+
+{% block body %}
+    <div class=container-md>
+        <div class="row">
+            <div class="col text-center">
+                <h3>{{product.name}}</h3>
+                <p>{{product.description}}</p>
+                <img class="img-fluid"  src={{product.picture}} alt="">
+                <p>Créer le {{ product.createdAt | date("d/m/Y") }}</p>
+                <div>
+                    <p class="text-decoration-line-through">{{product.price * 1.5}} €</p>
+                    <h2 class="danger">{{product.price}} €</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+{% endblock %}

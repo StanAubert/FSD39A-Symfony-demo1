@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminProductController!{% endblock %}
+
+{% block body %}
+<a class="btn btn-success" href="{{path("app_admin_product_add")}}">Ajouter un produit</a>
+<table class="table table-hover">
+    <thead>
+        <tr class="table-dark">
+            <th class="text-center" colspan="7">Products</th>
+        </tr>
+        <tr class="table-primary">
+            <th>Name</th>
+            <th>Description</th>
+            <th>Slug</th>
+            <th>Creation Date</th>
+            <th>Price</th>
+            <th class="text-center" colspan="2">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for product in products%}
+            <tr class="table-active">
+                <td>{{product.name}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.slug}}</td>
+                <td>{{product.createdAt | date('d/m/Y')}}</td>
+                <td>{{product.price}} €</td>
+                <td><button class="btn btn-info">Modifier</button></td>
+                <td><button class="btn btn-danger">Supprimer</button></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
