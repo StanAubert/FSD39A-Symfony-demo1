@@ -1,0 +1,7 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}{% if edit %} Modifier {{category.name}} {% else %} Add category {% endif %} {% endblock %}
+
+{% block body %}
+    {{form(form)}}
+{% endblock %}

@@ -27,7 +27,12 @@
                 <td>{{product.createdAt | date('d/m/Y')}}</td>
                 <td>{{product.price}} €</td>
                 <td><a href="{{path('app_admin_product_edit', {id:product.id})}}" class="btn btn-info">Modifier</a></td>
-                <td><button class="btn btn-danger">Supprimer</button></td>
+                <td>
+                    <form action="{{ path('app_admin_product_delete', { id: product.id }) }}" method="post">
+                        <input type="hidden" name="token" value="{{ csrf_token('delete-item') }}"/>
+                        <button class="btn btn-danger" type="submit">Supprimer</button>
+                    </form>
+                </td>
             </tr>
         {% endfor %}
     </tbody>
